@@ -10,6 +10,10 @@ app.use(express.json());
 
 connectToMongo();
 
+app.get("/testing", (req, res) => {
+  res.json({ message: "Server up and running !!!" });
+});
+
 app.use("/user", UserRoutes);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
